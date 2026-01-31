@@ -107,19 +107,15 @@ Reports are automatically generated in `playwright-report/` after each run.
 - ✅ Screenshots and videos on failure
 - ✅ HTML Reports
 
-
 ## 🚀 Future Improvements & Technical Debt
 
 While the current suite provides robust coverage, the following enhancements are planned to further increase the framework's maturity:
 
-1. Automated Data Teardown (Cleanup Hook)
-Objective: Implement a global afterEach or afterAll hook to perform environment cleanup.
+### 1. Automated Data Teardown (Cleanup Hook)
+**Objective:** Implement a global `afterEach` or `afterAll` hook to perform environment cleanup.  
+**Strategy:** Use Playwright's request context to delete test-generated data (e.g., categories created during tests) via API calls.  
+**Benefit:** This will ensure test idempotency, preventing database pollution and ensuring that each test run starts from a pristine state without manual intervention.
 
-Strategy: Use Playwright’s request context to delete test-generated data (e.g., categories created during Exercise 2) via API calls.
-
-Benefit: This will ensure test idempotency, preventing database pollution and ensuring that each test run starts from a pristine state without manual intervention.
-
-2. Extended CI/CD Integration
-Objective: Configure a GitHub Action to trigger the suite automatically on every Pull Request.
-
-Benefit: Ensuring a "Shift-Left" approach to quality, catching bugs like the "Page 555 Crash" before they reach higher environments.
+### 2. Extended CI/CD Integration
+**Objective:** Configure a GitHub Action to trigger the suite automatically on every Pull Request.  
+**Benefit:** Ensuring a "Shift-Left" approach to quality, catching bugs before they reach higher environments.
