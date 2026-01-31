@@ -119,3 +119,12 @@ While the current suite provides robust coverage, the following enhancements are
 ### 2. Extended CI/CD Integration
 **Objective:** Configure a GitHub Action to trigger the suite automatically on every Pull Request.  
 **Benefit:** Ensuring a "Shift-Left" approach to quality, catching bugs before they reach higher environments.
+
+
+## 📂 API Testing Artifacts
+
+I have included an Insomnia Collection to facilitate the reproduction of the API-level bugs identified during the exploratory phase.
+
+Location: ./docs/Insomina_Qubika_Collection.yaml 
+
+Instructions: 1. Import the file into Insomnia. 2. Execute the Login request first to obtain a Bearer Token. 3. Update the environment variables or Auth tab with the new token to run the remaining requests.

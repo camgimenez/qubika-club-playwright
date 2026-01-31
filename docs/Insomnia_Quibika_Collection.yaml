@@ -1,0 +1,310 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Qubika Sports Club API
+meta:
+  id: wrk_5074ebc24ac6483a9721c7bf39c9ae16
+  created: 1769792137173
+  modified: 1769793216082
+  description: ""
+collection:
+  - name: Qubika Sports Club API
+    meta:
+      id: fld_842ea518f5a94ddfb7e0c6d480ab8462
+      created: 1769794007758
+      modified: 1769794044813
+      sortKey: -1769794007758
+      description: ""
+    children:
+      - name: Auth
+        meta:
+          id: fld_d57437d0e1f242688c8e4b5f1ad3fa9f
+          created: 1769793230959
+          modified: 1769794025312
+          sortKey: -1769794014452
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/auth/register"
+            name: New User
+            meta:
+              id: req_82ad49c5b0f3477fb4f9945c5c363738
+              created: 1769793254809
+              modified: 1769890877052
+              isPrivate: false
+              description: ""
+              sortKey: -1769889722636
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "email": "existing_user@test.com",
+                  "password": "Password123!", 
+                 "roles": [
+                    "ROLE_ADMIN"
+                  ]
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.3.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/user/account"
+            name: Current User
+            meta:
+              id: req_6fa7b12bd3774792abf44e6c5e6d8df1
+              created: 1769808935006
+              modified: 1769889762856
+              isPrivate: false
+              description: ""
+              sortKey: -1769889722536
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.3.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/auth/login"
+            name: "Login "
+            meta:
+              id: req_a169496819f646ac94c1b2534d9f9c67
+              created: 1769889756918
+              modified: 1769890893997
+              isPrivate: false
+              description: ""
+              sortKey: -1769889722436
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {"email": "test.qubika@qubika.com",
+                 "password": "12345678"}
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.3.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - name: Bug Reproduction
+            meta:
+              id: fld_bda4b4235c964fdda07a67d24d633356
+              created: 1769889722336
+              modified: 1769889722336
+              sortKey: -1769889722336
+              description: ""
+      - name: Categories
+        meta:
+          id: fld_8b7cd817545c48c8b550fdb55ebc7fb9
+          created: 1769793577535
+          modified: 1769794014391
+          sortKey: -1769794014352
+          description: ""
+        children:
+          - url: "{{ _.base_url }}/api/category-type"
+            name: All Categories
+            meta:
+              id: req_e3fe5d2d2de648a191d389d38d2a0193
+              created: 1769793589123
+              modified: 1769794077545
+              isPrivate: false
+              description: ""
+              sortKey: -1769793589123
+            method: GET
+            headers:
+              - name: User-Agent
+                value: insomnia/12.3.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - url: "{{ _.base_url }}/api/category-type/create"
+            name: New Category
+            meta:
+              id: req_959b44d1e60040c18bd16662e5d1ca14
+              created: 1769794122281
+              modified: 1769805275473
+              isPrivate: false
+              description: ""
+              sortKey: -1769793589223
+            method: POST
+            body:
+              mimeType: application/json
+              text: |-
+                {
+                  "name": "Cat004-CG"
+                }
+            headers:
+              - name: Content-Type
+                value: application/json
+              - name: User-Agent
+                value: insomnia/12.3.0
+                description: ""
+                disabled: false
+            settings:
+              renderRequestBody: true
+              encodeUrl: true
+              followRedirects: global
+              cookies:
+                send: true
+                store: true
+              rebuildPath: true
+          - name: Bug-Reproduction
+            meta:
+              id: fld_d382da3d49ee42ec85751489b95087e8
+              created: 1769795682108
+              modified: 1769795955730
+              sortKey: -1769793589323
+              description: ""
+            children:
+              - url: "{{ _.base_url }}/api/category-type/create"
+                name: BUG-002 Duplicate Name
+                meta:
+                  id: req_597ecd6360444af083f0e1f223bede96
+                  created: 1769795707233
+                  modified: 1769795773746
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1769795713416
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |
+                    {
+                      "name": "Cat001-CG"
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/12.3.0
+                    description: ""
+                    disabled: false
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: "{{ _.base_url }}/api/category-type/create"
+                name: BUG-PLUS Empty Name
+                meta:
+                  id: req_a9144dbba7a14757901e9fea6a2a9080
+                  created: 1769795765200
+                  modified: 1769898926371
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1769794651319.5
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |
+                    {
+                      "name": ""
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/12.3.0
+                    description: ""
+                    disabled: false
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+              - url: "{{ _.base_url }}/api/category-type/create"
+                name: BUG-003 Information Exposure
+                meta:
+                  id: req_02ccb4079c0f430a8814bc4d7f460767
+                  created: 1769796056372
+                  modified: 1769898897479
+                  isPrivate: false
+                  description: ""
+                  sortKey: -1769795182367.75
+                method: POST
+                body:
+                  mimeType: application/json
+                  text: |
+                    {
+                      "name": "Cat001-CG", 
+                    }
+                headers:
+                  - name: Content-Type
+                    value: application/json
+                  - name: User-Agent
+                    value: insomnia/12.3.0
+                    description: ""
+                    disabled: false
+                settings:
+                  renderRequestBody: true
+                  encodeUrl: true
+                  followRedirects: global
+                  cookies:
+                    send: true
+                    store: true
+                  rebuildPath: true
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_f2ad934c48e15ec7b46714f351f2a45c43eac19d
+    created: 1769792137194
+    modified: 1769792137194
+environments:
+  name: Base Environment
+  meta:
+    id: env_f2ad934c48e15ec7b46714f351f2a45c43eac19d
+    created: 1769792137175
+    modified: 1769792137175
+    isPrivate: false
+  subEnvironments:
+    - name: Qubika QA
+      meta:
+        id: env_c9bc6097969e422686a4ebefee01c5d5
+        created: 1769793105910
+        modified: 1769899030720
+        isPrivate: false
+        sortKey: 1769793105910
+      data:
+        base_url: https://api.club-administration.qa.qubika.com
+        token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0LnF1YmlrYUBxdWJpa2EuY29tIiwiaWF0IjoxNzY5ODk4OTU4LCJleHAiOjE3Njk5ODUzNTh9.ylo6JIVjTRFv3cRUlhK7H-5Drd8Pfu2ZOyD3MpTFpkV-XJ-_Di8WS_hIK746pHzYf2RCR1jRML7Orp80mNg2ow
