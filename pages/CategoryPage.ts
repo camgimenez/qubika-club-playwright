@@ -48,7 +48,7 @@ export class CategoryPage {
 
     // Validate creation via API status code (POST) to avoid false negatives due to pagination in the
     expect(response.ok()).toBeTruthy(); // If the API said OK, the item was created.
-    console.log(`✅ Confirmación técnica: Categoría ${name} creada con éxito.`);
+    console.log(`✅ Technical confirmation: Category ${name} created successfully.`);
   }
 
   async createSubCategory(subName: string, parentName: string) {
@@ -80,9 +80,9 @@ export class CategoryPage {
     expect(response.ok()).toBeTruthy();
 
     if (response.ok()) {
-      console.log(`✅ Subcategoría "${subName}" creada con éxito vinculada a "${parentName}".`);
+      console.log(`✅ Subcategory  "${subName}" succesfully created from "${parentName}".`);
     } else {
-      throw new Error(`Error al crear subcategoría: ${response.status()}`);
+      throw new Error(`Error creating subcategory: ${response.status()}`);
     }
   }
 }
