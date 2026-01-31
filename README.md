@@ -127,4 +127,4 @@ I have included an Insomnia Collection to facilitate the reproduction of the API
 
 Location: ./docs/Insomina_Qubika_Collection.yaml 
 
-Instructions: 1. Import the file into Insomnia. 2. Execute the Login request first to obtain a Bearer Token. 3. Update the environment variables or Auth tab with the new token to run the remaining requests.
+Instructions: 1. Import the file into Insomnia. 2. Execute the Login request first to obtain a Bearer Token. 3. Update the environment variables or Auth tab with the new token to run the remaining requests. NOTE: The Insomnia collection contains dummy credentials. Please update the Login/Register body with your own data before running

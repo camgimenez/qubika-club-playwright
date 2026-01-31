@@ -28,7 +28,7 @@ collection:
             meta:
               id: req_82ad49c5b0f3477fb4f9945c5c363738
               created: 1769793254809
-              modified: 1769890877052
+              modified: 1769900354811
               isPrivate: false
               description: ""
               sortKey: -1769889722636
@@ -37,8 +37,8 @@ collection:
               mimeType: application/json
               text: |-
                 {
-                  "email": "existing_user@test.com",
-                  "password": "Password123!", 
+                  "email": "{{ _.email }}",
+                  "password": "your_password_here",
                  "roles": [
                     "ROLE_ADMIN"
                   ]
@@ -86,7 +86,7 @@ collection:
             meta:
               id: req_a169496819f646ac94c1b2534d9f9c67
               created: 1769889756918
-              modified: 1769890893997
+              modified: 1769900281914
               isPrivate: false
               description: ""
               sortKey: -1769889722436
@@ -94,8 +94,10 @@ collection:
             body:
               mimeType: application/json
               text: |-
-                {"email": "test.qubika@qubika.com",
-                 "password": "12345678"}
+                {
+                  "email": "admin@example.com",
+                  "password": "your_password_here"
+                }
             headers:
               - name: Content-Type
                 value: application/json
@@ -302,9 +304,11 @@ environments:
       meta:
         id: env_c9bc6097969e422686a4ebefee01c5d5
         created: 1769793105910
-        modified: 1769899030720
+        modified: 1769900221838
         isPrivate: false
         sortKey: 1769793105910
       data:
         base_url: https://api.club-administration.qa.qubika.com
         token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0LnF1YmlrYUBxdWJpa2EuY29tIiwiaWF0IjoxNzY5ODk4OTU4LCJleHAiOjE3Njk5ODUzNTh9.ylo6JIVjTRFv3cRUlhK7H-5Drd8Pfu2ZOyD3MpTFpkV-XJ-_Di8WS_hIK746pHzYf2RCR1jRML7Orp80mNg2ow
+        email: test.qubika@qubika.com
+        password: "12345678"
